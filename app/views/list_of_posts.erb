@@ -1,0 +1,28 @@
+<div class="container">
+  <h1>Welcome to The Faux Craigslist!</h1>
+  <h2><%=Category.find(params[:id]).name%></h2>
+</div>
+
+
+<div class="link">
+  <% @post.each do |p|%>
+    <a href= "/categories/<%=p.category_id%>/posts/<%= p.id%>">
+    <p><%= p.title%> </p> </a>
+    <%end%>
+
+<br>
+  <p>Post something:</p>
+  <form action="/categories/<%=params[:id]%>/posts/success" method="post">
+    Title:<br>
+    <textarea cols="60" rows="1" name="title">
+
+    </textarea><br>
+    Description:<br>
+    <textarea cols="60" rows="5" name="description">
+
+    </textarea><br><br>
+    <input type="submit" value="ENTER">
+</form>
+</div>
+
+

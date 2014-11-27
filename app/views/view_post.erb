@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>Welcome to The Faux Craigslist!</h1>
+  <h2><%=Category.find(params[:c_id]).name%></h2>
+</div>
+
+<div class="link">
+  <p><%= @post.description%> </p>
+</div>
+
+<div class="link">
+<a href= "/categories/<%=params[:c_id]%>/posts/<%=params[:p_id]%>/update">
+  <p>Edit post<p>  </a>
+</div>
